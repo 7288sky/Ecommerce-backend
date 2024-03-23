@@ -4,7 +4,7 @@ import Product from '../models/productsModel.js'
 
 const addProduct=asyncHandler(async(req,res)=>{
    try {
-    const {name,description, price,category,quantity,brand,countInStock}=req.fields;// we use formidable as a middleware thats why can use req.fie
+    const {name,description, price,category,quantity,brand,countInStock}=req.fields;// we use formidable as a middleware thats why can use req.fields
   //Validation
   switch(true){
     case !name:
