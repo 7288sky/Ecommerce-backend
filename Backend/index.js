@@ -20,10 +20,10 @@ app.use(cookieParser());
 
 
 
-// app.use(cors({
-//     origin: ['https://example.com', 'https://another-domain.com']
-//   }));
-app.use(cors())
+app.use(cors({
+    origin: 'https://e-commerce-frontend-2c64rchvm-7288skys-projects.vercel.app' // Replace with your allowed origin
+  }));
+// app.use(cors())
 
 
 
