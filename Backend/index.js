@@ -3,8 +3,11 @@ import path from 'path'
 import express from  'express'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
-
-
+import cors from 'cors'
+// app.use(cors({
+//     origin: ['https://example.com', 'https://another-domain.com']
+//   }));
+  app.use(cors())
 //utils
 import connectDB from './config/db.js'
 dotenv.config()
