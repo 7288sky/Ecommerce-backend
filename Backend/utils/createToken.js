@@ -9,7 +9,7 @@ const generateToken=(res,userId)=>{
 //Now we will set the jwt as HTTP-only cookie
 
 res.cookie('jwt',token,{
-    httpOnly:true,
+    // httpOnly:true,
     secure:true,
     sameSite:'strict',
     maxAge:30*24*60*60*1000
