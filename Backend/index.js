@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-    origin: 'https://e-commerce-frontend-2c64rchvm-7288skys-projects.vercel.app' // Replace with your allowed origin
+    origin: 'https://e-commerce-frontend-mlh5.onrender.com' // Replace with your allowed origin
   }));
 // app.use(cors())
 
