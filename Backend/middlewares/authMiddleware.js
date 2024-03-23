@@ -5,7 +5,7 @@ import asyncHandler from './asyncHandler.js'
 const authenticate=asyncHandler(async(req,res,next)=>{
     let token;
     // Now we will read JWT(token name) from 'jwt' cookie
-        token=req.cookies._vercel_jwt;
+        token=req.cookies.jwt;
 
         if(token){
            try{
