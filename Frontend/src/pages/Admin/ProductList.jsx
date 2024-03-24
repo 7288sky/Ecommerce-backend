@@ -34,10 +34,11 @@ const uploadFileHandler=async(e)=>{
 e.preventDefault();
 const formData=new FormData()
 formData.append('image',e.target.files[0])
-
+console.log(image)
 try {
   const res=await uploadProductImage(formData).unwrap()
   toast.success(res.message)
+  console.log(res.image)
   setImage(res.image)
   setImageUrl(res.image)
   // console.log(res.image)

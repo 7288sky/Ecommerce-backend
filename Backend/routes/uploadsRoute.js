@@ -1,6 +1,7 @@
 import express from "express";
 import path from 'path'
 import multer from "multer";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
 const router=express.Router()
 
 
@@ -35,13 +36,15 @@ const uploadSingleImage = upload.single("image");
 
 
   router.post('/',(req,res)=>{
-    uploadSingleImage(req,res,(err)=>{
+    uploadSingleImage(req,res,async(err)=>{
         if(err){
             res.status(400).send({message:err.message})
         }else if(req.file){
+          // console.log(req.file.path)
+          const image=await uploadOnCloudinary(req.file.path)
            res.status(200).send({
             message:"Image uploaded successfully",
-            image:`/${req.file.path}`
+            image:image
            }) 
         }else{
             res.status(400).send({message:"No image file provided"})
