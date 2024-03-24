@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-    origin: 'https://e-commerce-frontend-mlh5.onrender.com' // Replace with your allowed origin
+    origin: 'https://sensational-mochi-865816.netlify.app' // Replace with your allowed origin
   }));
 // app.use(cors())
 
