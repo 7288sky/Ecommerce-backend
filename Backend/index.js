@@ -20,10 +20,10 @@ app.use(cookieParser());
 
 
 
-app.use(cors({
-    origin: 'https://sensational-mochi-865816.netlify.app' // Replace with your allowed origin
-  }));
-// app.use(cors())
+// app.use(cors({
+//     origin: 'https://sensational-mochi-865816.netlify.app' // Replace with your allowed origin
+//   }));
+// // app.use(cors())
 
 
 
@@ -36,10 +36,6 @@ import categoryRoutes from './routes/categoryRoute.js'
 import productRoutes from './routes/productRoute.js'
 import uploadRoutes from './routes/uploadsRoute.js'
 import orderRoutes from './routes/orderRoute.js'
-
-app.get('/',(req,res)=>{
-    res.send('hello')
-  })
 
 
 app.use('/api/users',userRoutes)
@@ -57,7 +53,12 @@ const __dirname=path.resolve()
 app.use('/uploads',express.static(path.join(__dirname+'/uploads'))
     )
 
+    app.use(express.static(path.join(__dirname+'/Frontend/dist'))
+    )
 
+    app.get('*',(req,res)=>{
+      res.sendFile(path.join(__dirname,'Frontend','dist','index.html'))
+    })
 
 
 app.listen(port,()=>{
